@@ -107,3 +107,19 @@ body {
 .example-table .ant-table-title {
   padding: 0px;
 }
+
+/* Quantity test bar */
+.test-bar-wrapper {
+    padding: 20px;
+}
+.test-bar-header {
+    text-align: center;
+}
+.test-bar-body {
+    padding: 40px 0;
+}
+.test-alert {
+    border: none;
+    background-color: inherit;
+    padding: 8px 10px 8px 38px;
+}

@@ -5,8 +5,10 @@ import ExampleTable from './ExampleTable'
 import TopBar from './TopBar'
 import AddExampleModal from './AddExampleModal'
 import CompatibilityAlert from './CompatibilityAlert'
+import QuantityTestBar from './QuantityTest'
 import { connect } from 'react-redux'
-import { Spin } from 'antd'
+import { Layout, Spin } from 'antd'
+var _ = require('lodash')
 
 const mapState = (state) => ({
   examples: state.examples
@@ -14,6 +16,7 @@ const mapState = (state) => ({
 
 class App extends Component {
   render() {
+    const { Sider, Content } = Layout;
     const { examples } = this.props
     if (!examples) {
       return (
@@ -39,19 +42,30 @@ class App extends Component {
       })
     })
 
+    const exampleCount =  _.countBy( examples, 'intent')
+    
+
     return (
-      <div>
-        <ExampleTable
-          intents={intents}
-          entityNames={entityNames}
-          header={() => <TopBar />}
-        />
+      <Layout>
+        <Content>
+          <ExampleTable
+            intents={intents}
+            entityNames={entityNames}
+            header={() => <TopBar />}
+          />
+        </Content>
+        <Sider
+          width={300}
+        >
+          <QuantityTestBar exampleCount={exampleCount} />
+        </Sider>
+        
         <AddExampleModal
           intents={intents}
           entityNames={entityNames}
         />
         <CompatibilityAlert />
-      </div>
+      </Layout>
     )
   }
 }
