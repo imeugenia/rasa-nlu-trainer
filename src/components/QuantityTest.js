@@ -50,9 +50,6 @@ class QuantityTestBar extends Component {
                     <h2 style={{marginBottom: "40px"}}>
                         Training data quantity test
                     </h2>
-                    <p>
-                        
-                    </p>
                     <Progress className="test-progress" type="circle" percent={ percent } />
                 </div>
                 <div className="test-bar-body">
