@@ -8,6 +8,16 @@
         "entities": []
       },
       {
+        "text": "hello",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hey",
+        "intent": "greet",
+        "entities": []
+      },
+      {
         "text": "i'm looking for a place to eat",
         "intent": "restaurant_search",
         "entities": []

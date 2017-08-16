@@ -117,9 +117,25 @@ body {
 }
 .test-bar-body {
     padding: 40px 0;
+
 }
 .test-alert {
     border: none;
     background-color: inherit;
-    padding: 8px 10px 8px 38px;
+    padding: 8px 10px 8px 26px;
+    font-size: 14px;
+}
+.test-alert i {
+    left: 0px;
+}
+.test-progress i {
+    font-weight: bold;
+    font-size: 40px !important;
+}
+.test-alert-success {
+    padding: 8px 16px 8px 16px !important;
+    border: none;
+    font-size: 14px;
+    background-color: inherit;
+    text-align: center;
 }

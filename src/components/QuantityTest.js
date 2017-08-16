@@ -8,12 +8,11 @@ class QuantityTestBar extends Component {
     getPercent = (exampleMinPerIntent, exampleMinTotal) => {
         let realExampleNum = 0
         const exampleCount = this.props.exampleCount
+
         _.map( exampleCount, (value) => {
-            if ( value > exampleMinPerIntent ) return realExampleNum += exampleMinPerIntent
-                
+            if ( value > exampleMinPerIntent ) return realExampleNum += exampleMinPerIntent     
             return realExampleNum += value
         })
-        
         const percent = Math.round( realExampleNum / exampleMinTotal * 100 )
         if (percent) return percent
         return 0
@@ -34,12 +33,14 @@ class QuantityTestBar extends Component {
         
         let body = null;
         if ( percent === 0 ) {
-            body = <Alert className="test-alert" message={`Please, add examples`} type="warning" showIcon />
+            body = <Alert className="test-alert" message={`Please, start adding examples or upload a file.`} type="warning" showIcon />
         } else if ( percent === 100 ) {
-            body = <Alert className="test-alert" message={`Great, you have enought training data for Rasa NLU!`} type="success" showIcon />
+            body = <Alert className="test-alert-success" message={<span>Great!<br/> You have enought training data for Rasa NLU!</span>} type="success" />
         } else {
             body = _.map( shouldBeFixed, ( value, key ) => {
-                if ( value > 0 ) return <Alert className="test-alert" message={`Add at least ${value} more example(s) to ${key} intent.`} type="warning" showIcon />
+                if ( value > 0 ) return <Alert key={key} className="test-alert" message={
+                    <span>Add at least <b>{value}</b> more example(s) to <b>{key}</b> intent.</span>
+                    } type="warning" showIcon />
             })
         }
 
@@ -49,7 +50,10 @@ class QuantityTestBar extends Component {
                     <h2 style={{marginBottom: "40px"}}>
                         Training data quantity test
                     </h2>
-                    <Progress type="circle" percent={percent} />
+                    <p>
+                        
+                    </p>
+                    <Progress className="test-progress" type="circle" percent={ percent } />
                 </div>
                 <div className="test-bar-body">
                     { body } 
