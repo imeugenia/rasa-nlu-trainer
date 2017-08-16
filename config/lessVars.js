@@ -24,4 +24,6 @@ module.exports = {
   '@btn-default-color': '#fff',
   '@btn-default-border': '@blue',
   '@input-hover-border-color': '@light-purple',
+  '@layout-sider-background': '@body-background',
+
 }

@@ -1,18 +1,9 @@
 {
   "rasa_nlu_data": {
     "common_examples": [
+      
       {
-        "text": "hey",
-        "intent": "greet",
-        "entities": []
-      },
-      {
-        "text": "howdy",
-        "intent": "greet",
-        "entities": []
-      },
-      {
-        "text": "hey there",
+        "text": "hi",
         "intent": "greet",
         "entities": []
       },
@@ -22,7 +13,7 @@
         "entities": []
       },
       {
-        "text": "hi",
+        "text": "hey",
         "intent": "greet",
         "entities": []
       },
